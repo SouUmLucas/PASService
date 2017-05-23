@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PAS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/PAS.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
