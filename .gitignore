@@ -1,2 +1,8 @@
 *.class
-.idea/*
+.idea/
+bin/
+dist/
+nbproject/
+out/
+.classpath
+.project
