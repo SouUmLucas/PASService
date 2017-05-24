@@ -1,0 +1,44 @@
+@relation training
+
+@attribute message string
+@attribute sex_content, {yes, no}
+
+@data
+"Thanx for acee", no
+"Thanx for acceptin babygirl", yes
+"Np :p", no
+":) Thanx LEAH THATS A PRETTY NAME. Leah Where u from", no
+"Deocy - 14 Hartford.. U", no
+"You 14 yr old?? I'm from headland. How far is Hartford from DOTHAN", yes
+"Yeah y how old r u", no
+"Decoy Umm like 20 mins?", no
+"Oh okay. Dang you're beautiful I'm old babygirl. Im 23", yes
+"Thanks ^_^", no
+"U have a lucky bf. too bad a lil old", no
+"I dont have a bf :p", no
+"Dang why is that. Babygirl", no
+"I dunno.. Guys suck", no
+"NOOOOO. Not al. I dont Im awesome cool af.", no
+"Dang I wish I could turn back time. Just to b UR bf", no
+"R u sure? Lol", no
+"Heck yeah no doubt about that. I'm cool af. Im nice Im kind. This other fool aint got nun on me", no
+"Lol ok", no
+"Lol u dont believe me right", no
+"I dunno all guys say they are kool but turn out 2 b jerks I think", no
+"Oh. There is a big difference between me n them babygirl. The awesome part of me. Is that Im Hispanic/LATINO or how ever u wanna call it.", yes
+"Ooh thats kool", no
+"Im italian", no
+"Really. No wonder why u so pretty", yes
+"U full blooded Italian", no
+"My dad is.. I think my mom is half", no
+"U think. :)) That awesome. I wish I had an Italian girlfriend", no
+"Lol oh really", no
+"Hell yeah yall are awesome n beautiful", yes
+"Do u speak Italian", no
+"No I wish :(", no
+"Dad havent teach u?", no
+"No he lives in Chicago", no
+"Who u live with boo Mom?", no
+"Yea my dad lives in Chicago", no
+"Oh okay.", no
+"So pretty babygirl. I wish I wasnt this old.", no
