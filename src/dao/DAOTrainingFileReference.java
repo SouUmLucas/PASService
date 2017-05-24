@@ -16,12 +16,12 @@ public class DAOTrainingFileReference<T> implements IDAO {
 	}
 
 	@Override
-	public void insert(Entity entDominio) throws SQLException {
+	public Entity insert(Entity entDominio) throws SQLException {
 		Connection conn;
 		try {
 			conn = BDConnection.getConnection();
 			TrainingFileReference trainingFile = (TrainingFileReference) entDominio;
-			String sql = "INSERT INTO training_file_reference (filename, filepath) VALUES (?, ?)";
+			String sql = "INSERT INTO training_file_references (filename, filepath) VALUES (?, ?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, trainingFile.getFilename());
@@ -32,19 +32,19 @@ public class DAOTrainingFileReference<T> implements IDAO {
 			ps.close();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}	
+		}
+
+		return entDominio;
 	}
 
 	@Override
 	public void update(Entity entDominio) throws SQLException {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void delete(Entity entDominio) throws SQLException {
 		// TODO Auto-generated method stub
-		
 	}
 
 }
