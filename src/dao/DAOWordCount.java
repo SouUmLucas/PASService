@@ -1,28 +1,60 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import model.Entity;
 import model.WordCount;
 
-public class DAOWordCount<T> implements IDAO {
+public class DAOWordCount {
 
-    @Override
-    public T select(Entity entDominio) throws SQLException {
+    public WordCount select(Entity entDominio) throws SQLException {
         return null;
     }
 
-    @Override
-    public void insert(Entity entDominio) throws SQLException {
+    public ArrayList<WordCount> select() throws SQLException {
         Connection conn;
+        ArrayList<WordCount> wordCounts = new ArrayList<>();
+
         try {
             conn = BDConnection.getConnection();
-            WordCount wordCount = (WordCount) entDominio;
-            String sql = "INSERT INTO word_count (word, count) VALUES (?, ?)";
+            String sql = "SELECT word, count FROM word_count;";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
 
+            if (!rs.isBeforeFirst()) {
+                // if there aren't any data
+                return wordCounts;
+            }
+
+            while(rs.next()) {
+                WordCount wordCount = new WordCount();
+                wordCount.setWord(rs.getString(1));
+                wordCount.setCount(rs.getInt(2));
+                wordCount.setUpdateble(true);
+
+                wordCounts.add(wordCount);
+            }
+
+            conn.close();
+            rs.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return wordCounts;
+    }
+
+    public WordCount insert(Entity entDominio) throws SQLException {
+        Connection conn;
+        WordCount wordCount = (WordCount) entDominio;
+        try {
+            conn = BDConnection.getConnection();
+
+            String sql = "INSERT INTO word_count (word, count) VALUES (?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
+
             ps.setString(1, wordCount.getWord());
             ps.setInt(2, wordCount.getCount());
 
@@ -32,14 +64,14 @@ public class DAOWordCount<T> implements IDAO {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        return wordCount;
     }
 
-    @Override
     public void update(Entity entDominio) throws SQLException {
 
     }
 
-    @Override
     public void delete(Entity entDominio) throws SQLException {
 
     }

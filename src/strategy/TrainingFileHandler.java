@@ -22,11 +22,16 @@ import model.TrainingFileReference;
 public class TrainingFileHandler implements IFileHandler {
     
     public String handle(String filename, String fileContent) {
-        //String filepath = "E:\\PASService\\Uploads\\" + filename;
-        String filepath = "E:\\PASService\\Uploads\\training.arff";
+        String trainingfilepath = "TrainingFiles\\training_file.arff";
+        String filepath = "Uploads\\TrainingFiles\\" + filename;
         try {
-            FileOutputStream fos = new FileOutputStream(filepath);
-            BufferedOutputStream outputStream = new BufferedOutputStream(fos);
+            FileOutputStream trainingFilePathStream = new FileOutputStream(trainingfilepath);
+            BufferedOutputStream outputStream = new BufferedOutputStream(trainingFilePathStream);
+            outputStream.write(fileContent.getBytes("UTF-8"));
+            outputStream.close();
+
+            FileOutputStream uploadedFilePathStream = new FileOutputStream(filepath);
+            outputStream = new BufferedOutputStream(uploadedFilePathStream);
             outputStream.write(fileContent.getBytes("UTF-8"));
             outputStream.close();
 
@@ -45,7 +50,6 @@ public class TrainingFileHandler implements IFileHandler {
             System.err.println(e);
             throw new WebServiceException();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             System.err.println(e);
         }
         return "";
