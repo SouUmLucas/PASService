@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class BDConnection {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException{
-		final String URL = "jdbc:postgresql://locahost:5432/PASService";
+		final String URL = "jdbc:postgresql://localhost:5432/PASService";
 		final String USER = "lucas";
 		final String PASSWORD = "admin";
 		final String DRIVER = "org.postgresql.Driver";
