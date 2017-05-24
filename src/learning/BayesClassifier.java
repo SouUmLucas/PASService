@@ -14,7 +14,7 @@ public class BayesClassifier {
     
     public String classify(String filepath) {
         try {
-            DataSource ds = new DataSource("E:\\PASService\\Uploads\\training.arff");
+            DataSource ds = new DataSource("TrainingFiles\\training_file.arff");
             Instances ins = ds.getDataSet();
             //System.out.println(ins.toString());
             ins.setClassIndex(1);
