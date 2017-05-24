@@ -7,12 +7,12 @@ import javax.jws.WebMethod;
 public interface IPASServiceSEI {
 	@WebMethod
 	public String uploadTrainingFile(String filename, String fileContent);
-	
-	@WebMethod
-	public byte[] download(String filename);
-	
+
 	@WebMethod
 	public String uploadChatFile(String filename, String fileContent);
+
+	@WebMethod
+	public byte[] download(String filename);
 	
 	@WebMethod
 	public String createTree();
