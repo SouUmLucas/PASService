@@ -1,5 +1,7 @@
+*.settings/
 *.class
 .idea/
+.settings/
 bin/
 dist/
 nbproject/
